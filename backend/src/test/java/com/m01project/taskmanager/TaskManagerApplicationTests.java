@@ -7,8 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class TaskManagerApplicationTests {
 
 	@Test
-	void helloHelloTest() {
-
+	void contextLoads() {
 	}
 
 }
