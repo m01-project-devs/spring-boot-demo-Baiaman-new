@@ -29,4 +29,7 @@ public class User {
 
     @Column(name = "created_at", nullable = false)
     private ZonedDateTime createdAt;
+
+    public User(long l, String mail, String hashedpassword, ZonedDateTime now) {
+    }
 }
