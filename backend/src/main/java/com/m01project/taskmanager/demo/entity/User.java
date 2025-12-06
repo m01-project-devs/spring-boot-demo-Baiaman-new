@@ -1,12 +1,9 @@
 package com.m01project.taskmanager.demo.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
-import java.time.ZonedDateTime;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "users")
@@ -14,7 +11,8 @@ import java.time.ZonedDateTime;
 @Setter
 @ToString
 @NoArgsConstructor
-
+@AllArgsConstructor
+@Builder
 public class User {
 
     @Id
@@ -24,12 +22,15 @@ public class User {
     @Column(name = "email", nullable = false, length = 100, unique = true)
     private String email;
 
-    @Column(name = "password", nullable = false, length = 100)
-    private String password;
+    @Column(name = "password_hash", nullable = false, length = 100)
+    private String passwordHash;
+
+    @Column(name = "first_name", length = 50)
+    private String firstName;
+
+    @Column(name = "last_name", length = 50)
+    private String lastName;
 
     @Column(name = "created_at", nullable = false)
-    private ZonedDateTime createdAt;
-
-    public User(long l, String mail, String hashedpassword, ZonedDateTime now) {
-    }
+    private LocalDateTime createdAt;
 }
